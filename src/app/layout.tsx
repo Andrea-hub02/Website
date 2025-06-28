@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { Crimson_Pro } from 'next/font/google';
 
 
 const geistSans = Geist({
@@ -12,6 +13,11 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+const crimsonPro = Crimson_Pro({
+  subsets: ['latin'],
+  variable: '--font-crimson-pro',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -26,19 +32,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${crimsonPro.variable} antialiased`}>
         {/* NAVBAR */}
         <div className="navbar bg-base-100 shadow-sm bg-navbar flex items-center">
+          {/* Logo */}
           <div>
             <Link href="/" className="btn btn-ghost text-xl">LOGO</Link>
           </div>
+
+          {/* Links centrados */}
           <div className="flex-1 flex justify-center">
-            <ul className="menu menu-horizontal px-1 gap-x-12">
+            <ul className="menu menu-horizontal text-xl px-1 gap-x-12">
               <li><Link href="/about">About us</Link></li>
               <li><Link href="/servicios">Services</Link></li>
               <li><Link href="/clients">Clients</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
+          </div>
+
+          {/* Botón alineado a la derecha */}
+          <div className="flex-none pr-4">
+            <button
+              className="btn rounded-full"
+              style={{ backgroundColor: '#69B578', borderColor: '#69B578', color: 'white' }}
+            >
+              Learn more
+            </button>
           </div>
         </div>
         {/* CONTENIDO DE LA PÁGINA */}
