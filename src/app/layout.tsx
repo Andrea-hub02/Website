@@ -53,7 +53,7 @@ export default function RootLayout({
           {/* Botón alineado a la derecha */}
           <div className="flex-none pr-4">
             <button
-              className="btn rounded-full"
+              className="btn rounded-full w-[160px]"
               style={{ backgroundColor: '#69B578', borderColor: '#69B578', color: 'white' }}
             >
               Learn more

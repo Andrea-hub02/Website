@@ -31,3 +31,7 @@ body {
 .bg-navbar {
   background-color: #EEF6FC;
 }
+
+.font-crimson-pro {
+  font-family: var(--font-crimson-pro), serif;
+}
